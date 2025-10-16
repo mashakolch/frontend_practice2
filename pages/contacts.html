@@ -1,0 +1,471 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/styles.css">
+    <title>Контакты</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__row">
+                    <div class="header__col">
+                        <h1 class="header__title">Мой сайтик</h1>
+                    </div>
+                    <div class="header__col-auto">
+                        <span class="header__badge">ЭФБО-04-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="diary.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="projects.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h1 class="content__title">Контакты</h1>
+
+            <p class="content__email">Email: mashooter06@gmail.com</p>
+            <p class="content__address">Адрес: ул. Прикольная д.52, кв.99</p>
+
+            <button class="content__button" onclick="contactModal.showModal()">Связаться со мной</button>
+        </main>
+
+        <dialog class="modal" id="contactModal">
+            <div class="modal__header">
+                <h2 class="modal__title">Форма обратной связи</h2>
+            </div>
+
+            <div class="modal__content">
+                <form class="form" id="feedbackForm" method="dialog">
+                    <div class="form__group">
+                        <label class="form__label" for="name">Имя <span class="form__required">*</span></label>
+                        <input class="form__input" type="text" id="name" name="name" required
+                            placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="phone">Телефон <span class="form__required">*</span></label>
+                        <input class="form__input" type="tel" id="phone" name="phone" required
+                            placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="email">Электронная почта <span class="required">*</span></label>
+                        <input class="form__input" type="email" id="email" name="email" required
+                            placeholder="example@mail.ru">
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="category">Категория обращения <span
+                                class="required">*</span></label>
+                        <select class="form__select" id="category" name="category" required>
+                            <option value="category">Выберите категорию</option>
+                            <option value="question">Вопрос</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="feedback">Отзыв</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="message">Текст обращения <span class="required">*</span></label>
+                        <textarea class="form__textarea" id="message" name="message" required
+                            placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                    </div>
+
+                    <div class="modal__actions">
+                        <button class="modal__button modal__button--secondary" type="button"
+                            onclick="closeModal()">Отмена</button>
+                        <button class="modal__button modal__button--primary" type="button"
+                            onclick="submitForm()">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
+        <footer class="footer">
+            <p class="footer__text">Футер</p>
+        </footer>
+    </div>
+
+    <script>
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            const form = document.getElementById('feedbackForm');
+            modal.close();
+            form.reset();
+        }
+
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            };
+
+            console.log('Данные формы:', data);
+
+            alert('Спасибо! Ваше обращение отправлено. Я свяжусь с вами в ближайшее время.');
+
+            closeModal();
+        }
+
+        document.getElementById('contactModal').addEventListener('click', function (event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+        document.getElementById('feedbackForm').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea') {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html> -->
+<!-- 
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrapicons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid p-0">
+       
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Мой сайтик</h1>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-04-24</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+     
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bstoggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diary.html">
+                                <i class="bi bi-newspaper me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">
+                                <i class="bi bi-code-slash me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                
+            </div>
+        </nav>
+        
+          
+        </main>
+        
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Сайт студента. Все права
+                            защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white textdecoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decorationnone">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">                            
+                            <div>
+                                <h1 class="h4 mb-0">Колеченкова Мария</h1>
+                                <small class="opacity-75">ЭФБО-04-24</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <span class="badge bg-light text-primary fs-6">Контакты</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diary.html">
+                                <i class="bi bi-newspaper me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">
+                                <i class="bi bi-code-slash me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-5">
+            <!-- Page Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h1 class="display-5 fw-bold text-primary">Свяжитесь со мной</h1>
+                    <p class="lead text-muted">Буду рада ответить на ваши вопросы и предложения</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-8 mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-envelope text-primary me-2"></i>
+                                Напишите сообщение
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="name" required placeholder="Введите ваше имя">
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите ваше имя.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" required placeholder="example@mail.ru">
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите корректный email адрес.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Тема сообщения</label>
+                                    <input type="text" class="form-control" id="subject" placeholder="Тема вашего сообщения">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Сообщение <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" rows="6" required placeholder="Напишите ваше сообщение..."></textarea>
+                                    <div class="invalid-feedback">
+                                        Пожалуйста, напишите ваше сообщение.
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="consent" required>
+                                    <label class="form-check-label" for="consent">
+                                        Я соглашаюсь на обработку моих персональных данных
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Необходимо ваше согласие для отправки сообщения.
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="bi bi-send me-2"></i>Отправить сообщение
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <!-- Contact Details -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-info-circle text-primary me-2"></i>
+                                Контактная информация
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-card mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-primary rounded-circle p-2 me-3">
+                                        <i class="bi bi-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Email</h6>
+                                        <a href="mailto:mashooter06@gmail.com" class="text-decoration-none">mashooter06@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-card mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-success rounded-circle p-2 me-3">
+                                        <i class="bi bi-github text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">GitHub</h6>
+                                        <a href="https://github.com/mashakolch" class="text-decoration-none" target="_blank">https://github.com/mashakolch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-share text-primary me-2"></i>
+                                Социальные сети
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-2 text-center">
+                                <div class="col-4">
+                                    <a href="https://github.com/username" class="social-link text-dark text-decoration-none" target="_blank">
+                                        <i class="bi bi-github fs-4"></i>
+                                        <small class="d-block">GitHub</small>
+                                    </a>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <a href="https://t.me/username" class="social-link text-info text-decoration-none" target="_blank">
+                                        <i class="bi bi-telegram fs-4"></i>
+                                        <small class="d-block">Telegram</small>
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="https://vk.com/username" class="social-link text-primary text-decoration-none" target="_blank">
+                                        <i class="bi bi-chat-dots fs-4"></i>
+                                        <small class="d-block">VK</small>
+                                    </a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="https://instagram.com/username" class="social-link text-danger text-decoration-none" target="_blank">
+                                        <i class="bi bi-instagram fs-4"></i>
+                                        <small class="d-block">Instagram</small>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Сайт студента. Все права
+                            защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white textdecoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decorationnone">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../scripts/form-validation.js"></script>
+</body>
+</html>
