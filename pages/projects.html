@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Put your description here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Проекты - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
-<body>
-    <div class="container-fluid p-0">
-
+<body class="page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <div class="container-fluid p-0 ">
         <header class="bg-primary text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
@@ -20,42 +21,43 @@
                         <div class="d-flex align-items-center">
                             <div>
                                 <h1 class="h4 mb-0">Колеченкова Мария</h1>
-                                <small class="opacity-75">ЭФБО-04-24</small>
+                                <small>ЭФБО-04-24</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <span class="badge bg-light text-primary fs-6">Проекты</span>
+                        <span class="badge bg-light text-dark fs-6">Проекты</span>
                     </div>
                 </div>
             </div>
         </header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" aria-label="Основная навигация">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-expanded="false" aria-controls="navbarNav" aria-label="Переключить навигацию">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="../index.html">
-                                <i class="bi bi-house me-1"></i>Главная
+                            <a class="nav-link" href="../index.html" aria-current="page">
+                                <i class="bi bi-house me-1" aria-hidden="true"></i>Главная
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="diary.html">
-                                <i class="bi bi-newspaper me-1"></i>Дневник
+                                <i class="bi bi-newspaper me-1" aria-hidden="true"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="projects.html">
-                                <i class="bi bi-code-slash me-1"></i>Проекты
+                            <a class="nav-link activeыы" href="projects.html">
+                                <i class="bi bi-code-slash me-1" aria-hidden="true"></i>Проекты
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacts.html">
-                                <i class="bi bi-telephone me-1"></i>Контакты
+                                <i class="bi bi-telephone me-1" aria-hidden="true"></i>Контакты
                             </a>
                         </li>
                     </ul>
@@ -64,7 +66,7 @@
         </nav>
 
 
-        <main class="container my-5">
+        <main id="main" class="container my-5 main">
 
             <div class="row mb-4">
                 <div class="col-12">
@@ -78,28 +80,28 @@
                 <div class="col-12">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title mb-3">
+                            <h2 class="card-title mb-3">
                                 <i class="bi bi-funnel me-2"></i>Фильтр по технологиям
-                            </h5>
+                            </h2>
                             <div class="d-flex flex-wrap gap-2" id="filter-buttons">
-                                <button class="btn btn-outline-primary filter-btn active" data-filter="all">
+                                <button class="btn btn-outline-primary filter-btn active" data-filter="all" aria-label="Все проекты">
                                     Все проекты
                                 </button>
-                                
+
                                 </button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="javascript">
+                                <button class="btn btn-outline-primary filter-btn" data-filter="javascript" aria-label="JavaScript">
                                     JavaScript
                                 </button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="python">
+                                <button class="btn btn-outline-primary filter-btn" data-filter="python" aria-label="Python">
                                     Python
                                 </button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="cooking">
+                                <button class="btn btn-outline-primary filter-btn" data-filter="cooking" aria-label="Cooking">
                                     Cooking
                                 </button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="paint">
+                                <button class="btn btn-outline-primary filter-btn" data-filter="paint" aria-label="Paint">
                                     Paint
                                 </button>
-                                <button class="btn btn-outline-primary filter-btn" data-filter="SoundCloud">
+                                <button class="btn btn-outline-primary filter-btn" data-filter="SoundCloud" aria-label="SoundCloud API">
                                     SoundCloud API
                                 </button>
                             </div>
@@ -109,22 +111,27 @@
             </div>
 
             <!-- Projects Grid -->
-            <div class="row g-4" id="projects-grid">
+            <div class="projects-grid" id="projects-grid">
                 <!-- Project 1 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="SoundCloud">
+                <div class="project-item visible" data-tech="SoundCloud">
                     <div class="card project-card h-100">
-                        <img src="../images/morgen.jpg" class="card-img-top project-image" alt="Бит для Моргенштерна">
+                        <img src="../images/morgen.jpg" srcset="../images/morgen-400.jpg 400w, 
+                            ../images/morgen-550.jpg 550w, 
+                            ../images/morgen.jpg 736w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw"
+                            width="400" height="300" style="height: auto;" loading="lazy" alt="Бит для Моргенштерна" class="card-img-top project-image">
+
                         <div class="card-body d-flex flex-column">
                             <span class="badge bg-primary mb-2">Коммерческий проект</span>
-                            <h5 class="card-title">Бит для Моргенштерна</h5>
-                            <p class="card-text text-muted">Душераздирающий бит Моргенштерна для подростков 12+ с
+                            <h3 class="card-title project-card__title">Бит для Моргенштерна</h3>
+                            <p class="card-text text-muted project-card__description">Душераздирающий бит Моргенштерна
+                                для подростков 12+ с
                                 современным звучанием и крутым продакшеном.</p>
                             <div class="mb-3">
 
                                 <span class="badge bg-secondary tech-badge">SoundCloud API</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal1">
+                                data-bs-target="#projectModal1" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -132,18 +139,22 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="paint">
+                <div class="project-item visible" data-tech="paint">
                     <div class="card project-card h-100">
-                        <img src="../images/9mice.jpg" class="card-img-top project-image" alt="Портрет исполнителя">
+                        <img src="../images/9mice.jpg"
+                            srcset="../images/9mice-400.jpg 400w, ../images/9mice-600.jpg 600w,../images/9mice-800.jpg 800w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400" height="300"
+                            alt="Портрет исполнителя" style="height: auto;" loading="lazy" class="card-img-top project-image">
                         <div class="card-body d-flex flex-column">
                             <span class="badge bg-success mb-2">Личный проект</span>
-                            <h5 class="card-title">Портрет известного исполнителя</h5>
-                            <p class="card-text text-muted">Портрет известного исполнителя в стиле сюрреализм.</p>
+                            <h3 class="card-title project-card__title">Портрет известного исполнителя</h3>
+                            <p class="card-text text-muted project-card__description">Портрет известного исполнителя в
+                                стиле сюрреализм.</p>
                             <div class="mb-3">
                                 <span class="badge bg-secondary tech-badge me-1">Paint</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal2">
+                                data-bs-target="#projectModal2" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -151,19 +162,25 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="cooking">
+                <div class="project-item visible" data-tech="cooking">
                     <div class="card project-card h-100">
-                        <img src="../images/cake1.jpg" class="card-img-top project-image" alt="Торт P.Diddy">
+
+                        <img src="../images/cake1.jpg"
+                            srcset="../images/cake1-400.jpg 400w, ../images/cake1-600.jpg 600w,../images/cake1-800.jpg 800w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400" height="300"
+                            alt="Торт P.Diddy" style="height: auto;" loading="lazy" class="card-img-top project-image">
+
                         <div class="card-body d-flex flex-column">
-                            <span class="badge bg-warning mb-2">Проект от всего сердца</span>
-                            <h5 class="card-title">Торт для Зака</h5>
-                            <p class="card-text text-muted">Торт дубайский шоколад для вечеринки крутого американского
+                            <span class="badge bg-primary mb-2">Проект от всего сердца</span>
+                            <h3 class="card-title project-card__title">Торт для Зака</h3>
+                            <p class="card-text text-muted project-card__description">Торт дубайский шоколад для
+                                вечеринки крутого американского
                                 подростка Зака и его друзей.</p>
                             <div class="mb-3">
                                 <span class="badge bg-secondary tech-badge me-1">Cooking</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal3">
+                                data-bs-target="#projectModal3" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -171,13 +188,17 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="python javascript">
+                <div class="project-item visible" data-tech="python javascript">
                     <div class="card project-card h-100">
-                        <img src="../images/naruto.jpg" class="card-img-top project-image" alt="Интернет-магазин">
+                        <img src="../images/naruto.jpg"
+                            srcset="../images/naruto-400.jpg 400w, ../images/naruto-600.jpg 600w, ../images/naruto-800.jpg 800w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400" height="300"
+                            alt="Интернет-магазин" style="height: auto;" loading="lazy" class="card-img-top project-image">
                         <div class="card-body d-flex flex-column">
-                            <span class="badge bg-info mb-2">Коммерческий проект</span>
-                            <h5 class="card-title">Интернет-магазин аниме товаров</h5>
-                            <p class="card-text text-muted">Полнофункциональный интернет-магазин с системой заказов,
+                            <span class="badge bg-primary mb-2">Коммерческий проект</span>
+                            <h3 class="card-title project-card__title">Интернет-магазин аниме товаров</h3>
+                            <p class="card-text text-muted project-card__description">Полнофункциональный
+                                интернет-магазин с системой заказов,
                                 корзиной и платежной интеграцией.</p>
                             <div class="mb-3">
                                 <span class="badge bg-secondary tech-badge me-1">Python</span>
@@ -185,7 +206,7 @@
                                 <span class="badge bg-secondary tech-badge">Django</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal4">
+                                data-bs-target="#projectModal4" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -193,13 +214,19 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="react bootstrap">
+                <div class="project-item visible" data-tech="react bootstrap">
                     <div class="card project-card h-100">
-                        <img src="../images/img1.jpg" class="card-img-top project-image" alt="Модный блог">
+                        <img src="../images/img1.jpg"
+                            srcset="../images/img1-400.jpg 400w, ../images/img1-600.jpg 600w, ../images/img1-800.jpg 800w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400" height="300"
+                            alt="Модный блог" class="card-img-top project-image" style="height: auto;" loading="lazy">
+
+
                         <div class="card-body d-flex flex-column">
                             <span class="badge bg-success mb-2">Личный проект</span>
-                            <h5 class="card-title">Модный блог Balenciaga</h5>
-                            <p class="card-text text-muted">Современный блог о моде с системой комментариев, лайков и
+                            <h3 class="card-title project-card__title">Модный блог Balenciaga</h3>
+                            <p class="card-text text-muted project-card__description">Современный блог о моде с системой
+                                комментариев, лайков и
                                 адаптивным дизайном.</p>
                             <div class="mb-3">
                                 <span class="badge bg-secondary tech-badge me-1">React</span>
@@ -207,7 +234,7 @@
                                 <span class="badge bg-secondary tech-badge">Firebase</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal5">
+                                data-bs-target="#projectModal5" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -215,13 +242,18 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="col-lg-4 col-md-6 project-item visible" data-tech="nodejs javascript">
+                <div class="project-item visible" data-tech="nodejs javascript">
                     <div class="card project-card h-100">
-                        <img src="../images/shoes.jpg" class="card-img-top project-image" alt="Мобильное приложение">
+                        <img src="../images/shoes.jpg"
+                            srcset="../images/shoes-400.jpg 400w, ../images/shoes-600.jpg 600w, ../images/shoes-800.jpg 800w"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400" height="300"
+                            alt="Обувь вай" class="card-img-top project-image" style="height: auto;" loading="lazy">
+
                         <div class="card-body d-flex flex-column">
-                            <span class="badge bg-warning mb-2">Коммерческий проект</span>
-                            <h5 class="card-title">Приложение для обувного магазина</h5>
-                            <p class="card-text text-muted">Мобильное приложение с AR-примеркой обуви и системой
+                            <span class="badge bg-primary mb-2">Коммерческий проект</span>
+                            <h3 class="card-title project-card__title">Приложение для обувного магазина</h3>
+                            <p class="card-text text-muted project-card__description">Мобильное приложение с
+                                AR-примеркой обуви и системой
                                 рекомендаций на основе AI.</p>
                             <div class="mb-3">
                                 <span class="badge bg-secondary tech-badge me-1">Node.js</span>
@@ -229,7 +261,7 @@
                                 <span class="badge bg-secondary tech-badge">React Native</span>
                             </div>
                             <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#projectModal6">
+                                data-bs-target="#projectModal6" aria-label="Подробнее">
                                 Подробнее
                             </button>
                         </div>
@@ -246,8 +278,8 @@
                             защищены.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="contacts.html" class="text-white textdecoration-none me-3">Контакты</a>
-                        <a href="#" class="text-white text-decorationnone">Политика конфиденциальности</a>
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
@@ -278,55 +310,6 @@
                                 <img src="../images/9mice.jpg" class="d-block w-100 carousel-image"
                                     alt="Дополнительный скриншот 2">
                             </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h6>Описание проекта</h6>
-                            <p>Душераздирающий бит Моргенштерна для подростков 12+ с современным звучанием и крутым
-                                продакшеном. Проект включает в себя создание веб-приложения для управления звуковыми
-                                дорожками и интеграцию с SoundCloud API.</p>
-
-                            <h6 class="mt-4">Функциональность</h6>
-                            <ul>
-                                <li>Редактор аудио дорожек в реальном времени</li>
-                                <li>Интеграция с SoundCloud для публикации</li>
-                                <li>Система эффектов и фильтров</li>
-                                <li>Адаптивный дизайн для мобильных устройств</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h6>Технологии</h6>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge bg-primary">HTML/CSS</span>
-                                <span class="badge bg-primary">Bootstrap</span>
-                                <span class="badge bg-primary">JavaScript</span>
-                                <span class="badge bg-primary">SoundCloud API</span>
-                            </div>
-
-                            <h6>Ссылки</h6>
-                            <div class="d-grid gap-2">
-                                <a href="#" class="btn btn-outline-primary">
-                                    <i class="bi bi-globe me-2"></i>Живая версия
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary">
-                                    <i class="bi bi-github me-2"></i>Исходный код
-                                </a>
-                            </div>
-
-                            <h6 class="mt-3">Статус</h6>
-                            <span class="badge bg-success">Завершен</span>
                         </div>
                     </div>
                 </div>

@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Put your description here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="bg-light">
-    <div class="container-fluid p-0">
-
+<body class="bg-light page">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+    <div class="container-fluid p-0 ">
         <header class="bg-primary text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
@@ -19,15 +21,16 @@
                         <h1 class="h3 mb-1">Мой сайтик</h1>
                     </div>
                     <div class="col-auto">
-                        <span class="badge bg-light text-primary">ЭФБО-04-24</span>
+                        <span class="badge bg-light text-dark">ЭФБО-04-24</span>
                     </div>
                 </div>
             </div>
         </header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bstoggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -58,30 +61,39 @@
 
             </div>
         </nav>
-        <main class="container my-4">
+        <main id="main" class="container my-4 main">
             <section class="mb-5">
                 <div class="card shadow-sm">
                     <div class="card-body p-4">
                         <div class="row align-items-center">
                             <div class="col-md-3 text-center mb-3 mb-md-0">
-                                <img src="images/photo.jpg" alt="Фото студента" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit:
-cover;">
+                                <figure class="hero__image">
+                                    <picture>
+
+                                        <source type="image/avif" srcset="images/photo-avif-150.avif 150w, images/photo-avif-200.avif 200w,
+images/photo-avif-300.avif 300w" sizes="200px">
+                                        <source type="image/webp" srcset="images/photo-webp-150.webp 150w, images/photo-webp-200.webp 200w,
+images/photo-webp-300.webp 300w" sizes="200px">
+
+                                        <img class="hero__photo" src="images/photo-jpg.jpg" srcset="images/photo-jpg-150.jpg 150w, images/photo-jpg-200.jpg 200w,
+images/photo-jpg-300.jpg 300w" sizes="200px" width="200" height="200" alt="Портрет студента" fetchpriority="high">
+                                    </picture>
+                                </figure>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-9 ps-md-5">
                                 <h2 class="card-title h4 text-primary">Колеченкова Мария Алексеевна</h2>
                                 <p class="card-text text-muted mb-2">
-                                    <i class="bi bi-bookmark-check-fill textprimary"></i>
+                                    <i class="bi bi-bookmark-check-fill text-primary"></i>
                                     Студентка группы ЭФБО-04-24
                                 </p>
                                 <p class="card-text">
-                                    Факультет информационных технологий,
-                                    специальность "Фуллстек-разработка"
+                                    ИПТИП "Фуллстек-разработка"
                                 </p>
                                 <div class="d-flex gap-2 flex-wrap">
                                     <span class="badge bg-primary">+вайб</span>
                                     <span class="badge bg-success">свага</span>
 
-                                    <button class="btn btn-outline-warning btn-sm" onclick="downloadResume()">
+                                    <button class="btn btn-outline-primary btn-sm" onclick="downloadResume()">
                                         <i class="bi bi-download"></i> Скачать резюме
                                     </button>
                                 </div>
@@ -133,7 +145,7 @@ cover;">
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="d-flex justify-content-between mb1">
+                                    <div class="d-flex justify-content-between mb-1">
                                         <span>WB</span>
                                         <span class="text-primary">75%</span>
                                     </div>
@@ -144,7 +156,7 @@ cover;">
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <div class="d-flex justify-content-between mb1">
+                                    <div class="d-flex justify-content-between mb-1">
                                         <span>Сон</span>
                                         <span class="text-primary">85%</span>
                                     </div>
@@ -153,7 +165,7 @@ cover;">
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="d-flex justify-content-between mb1">
+                                    <div class="d-flex justify-content-between mb-1">
                                         <span>Рисование</span><span class="text-primary">70%</span>
                                     </div>
                                     <div class="progress" style="height: 8px;">
@@ -177,11 +189,16 @@ cover;">
                     <div class="card-body">
                         <div class="row g-3">
                             <div class="col-md-4">
-                                <div class="card h-100">
-                                    <img src="images/morgen.jpg" class="cardimg-top" alt="Личный сайт"
-                                        style="height: 250px; object-fit: cover;">
+                                <div class="card h-100 project-card">
+                                    <img src="images/morgen.jpg" srcset="images/morgen-400.jpg 400w, 
+                            images/morgen-550.jpg 550w, 
+                            images/morgen.jpg 736w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw"
+                                        width="400" height="300" style="height: auto;" alt="Бит для Моргенштерна"
+                                        class="card-img-top project-image" loading="lazy">
+
+
                                     <div class="card-body">
-                                        <h5 class="card-title">Бит для моргенштерна</h5>
+                                        <h3 class="card-title">Бит для моргенштерна</h3>
                                         <p class="card-text small text-muted">
                                             Душераздирающий бит Моргенштерна для подростков 12+
                                         </p>
@@ -192,11 +209,15 @@ cover;">
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="card h-100">
-                                    <img src="images/9mice.jpg" class="cardimg-top" alt="Todo приложение"
-                                        style="height: 250px; object-fit: cover;">
+                                <div class="card h-100 project-card">
+                                    <img src="images/9mice.jpg"
+                                        srcset="images/9mice-400.jpg 400w, images/9mice-600.jpg 600w, images/9mice-800.jpg 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400"
+                                        height="300" alt="Портрет исполнителя" style="height: auto;"
+                                        class="card-img-top project-image" loading="lazy">
+
                                     <div class="card-body">
-                                        <h5 class="card-title">Портрет известного исполнителя</h5>
+                                        <h3 class="card-title">Портрет известного исполнителя</h3>
                                         <p class="card-text small text-muted">
                                             Портрет известного исполнителя в стире сюрреализм.
                                         </p>
@@ -208,16 +229,20 @@ cover;">
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="card h-100">
-                                    <img src="images/cake1.jpg" class="cardimg-top" alt="Интернет-магазин"
-                                        style="height: 250px; object-fit: cover;">
+                                <div class="card h-100 project-card">
+                                    <img src="images/cake1.jpg"
+                                        srcset="images/cake1-400.jpg 400w, images/cake1-600.jpg 600w,images/cake1-800.jpg 800w"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" width="400"
+                                        height="300" alt="Торт P.Diddy" class="card-img-top project-image"
+                                        style="height: auto;" loading="lazy">
+
                                     <div class="card-body">
-                                        <h5 class="card-title">Торт</h5>
+                                        <h3 class="card-title">Торт</h3>
                                         <p class="card-text small text-muted">
                                             Торт дубайский шоколад для вечеринки американского подростка Зака.
                                         </p>
                                         <div class="mb-2">
-                                            <span class="badge bg-info">Вкус</span>
+                                            <span class="badge bg-primary">Вкус</span>
                                         </div>
                                     </div>
                                 </div>
@@ -236,8 +261,8 @@ cover;">
                             защищены.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="pages/contacts.html" class="text-white textdecoration-none me-3">Контакты</a>
-                        <a href="#" class="text-white text-decorationnone">Политика конфиденциальности</a>
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
